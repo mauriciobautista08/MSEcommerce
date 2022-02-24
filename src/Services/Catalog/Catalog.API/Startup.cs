@@ -1,4 +1,5 @@
 using Catalog.PersistenceDB;
+using Catalog.Service.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,8 @@ namespace Catalog.API
             services.AddDbContext<ApplicationDBContext>(opts =>
             opts.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
+
+            services.AddTransient<IProductQueryService, ProductQueryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
