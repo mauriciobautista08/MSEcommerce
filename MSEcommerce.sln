@@ -31,15 +31,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "src\Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.PersistenceDB", "src\Services\Catalog\Catalog.PersistenceDB\Catalog.PersistenceDB.csproj", "{4A83C253-AD98-406A-B067-2BEDCD10952B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Service.Queries", "src\Services\Catalog\Catalog.Service.Queries\Catalog.Service.Queries.csproj", "{C852722E-9125-426D-850C-21B9BF29E797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Service.Queries", "src\Services\Catalog\Catalog.Service.Queries\Catalog.Service.Queries.csproj", "{C852722E-9125-426D-850C-21B9BF29E797}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{313BB1AA-0139-440C-9760-4BBD93FB9218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Common.Collection", "src\Services\Catalog\Service.Common.Collection\Service.Common.Collection.csproj", "{14C47491-1804-4484-9A91-D7E338C65DA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Collection", "src\Services\Catalog\Service.Common.Collection\Service.Common.Collection.csproj", "{14C47491-1804-4484-9A91-D7E338C65DA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Common.Mapping", "src\Services\Catalog\Service.Common.Mapping\Service.Common.Mapping.csproj", "{E4B2E3E3-7223-4E21-8A36-78D80BD357AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Mapping", "src\Services\Catalog\Service.Common.Mapping\Service.Common.Mapping.csproj", "{E4B2E3E3-7223-4E21-8A36-78D80BD357AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Common.Pagging", "src\Services\Catalog\Catalog.Service.Pagging\Service.Common.Pagging.csproj", "{662EC0F0-448D-46C8-B70D-0C6617EF4472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Pagging", "src\Services\Catalog\Catalog.Service.Pagging\Service.Common.Pagging.csproj", "{662EC0F0-448D-46C8-B70D-0C6617EF4472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Services.EventHandlers", "src\Services\Catalog\Catalog.Services.EventHandlers\Catalog.Services.EventHandlers.csproj", "{9B7AD15D-FC4D-4A15-A4C9-FD1F38025A64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalos.Service.Commons", "src\Services\Catalog\Catalos.Service.Commons\Catalos.Service.Commons.csproj", "{4F4B54CE-A328-4AEF-A208-D07505FFF232}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{662EC0F0-448D-46C8-B70D-0C6617EF4472}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{662EC0F0-448D-46C8-B70D-0C6617EF4472}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{662EC0F0-448D-46C8-B70D-0C6617EF4472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7AD15D-FC4D-4A15-A4C9-FD1F38025A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7AD15D-FC4D-4A15-A4C9-FD1F38025A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7AD15D-FC4D-4A15-A4C9-FD1F38025A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7AD15D-FC4D-4A15-A4C9-FD1F38025A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F4B54CE-A328-4AEF-A208-D07505FFF232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4B54CE-A328-4AEF-A208-D07505FFF232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4B54CE-A328-4AEF-A208-D07505FFF232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4B54CE-A328-4AEF-A208-D07505FFF232}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +108,8 @@ Global
 		{14C47491-1804-4484-9A91-D7E338C65DA1} = {313BB1AA-0139-440C-9760-4BBD93FB9218}
 		{E4B2E3E3-7223-4E21-8A36-78D80BD357AA} = {313BB1AA-0139-440C-9760-4BBD93FB9218}
 		{662EC0F0-448D-46C8-B70D-0C6617EF4472} = {313BB1AA-0139-440C-9760-4BBD93FB9218}
+		{9B7AD15D-FC4D-4A15-A4C9-FD1F38025A64} = {F7D6FE9C-B424-4155-ACDD-A190D149BEE0}
+		{4F4B54CE-A328-4AEF-A208-D07505FFF232} = {313BB1AA-0139-440C-9760-4BBD93FB9218}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4431ED43-C9B3-40BC-BDEB-43617137A4E2}

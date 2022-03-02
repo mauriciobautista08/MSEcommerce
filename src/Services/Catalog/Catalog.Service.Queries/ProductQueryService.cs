@@ -25,6 +25,7 @@ namespace Catalog.Service.Queries
             _context = context;
         }
 
+        //metodo de paginación
         public async Task<DataCollection<ProductDTO>> GetAllAsync(int page, int take, IEnumerable<int> products = null)
         {
             var collection = await _context.Products
@@ -32,6 +33,7 @@ namespace Catalog.Service.Queries
                 .OrderBy(x => x.Name)
                 .GetPagedAsync(page, take);
 
+            // retorna la colección actual pero del tipo product del dominio pero en DTO
             return collection.MapTo<DataCollection<ProductDTO>>();
         }
 
