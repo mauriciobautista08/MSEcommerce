@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Catalog.API.Controllers
 {
+    [ApiController]
+    [Route("stocks")]
     public class ProductInStockController : ControllerBase
     {
         private readonly ILogger<ProductInStockController> _logger;

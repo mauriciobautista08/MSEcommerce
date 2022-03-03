@@ -1,5 +1,6 @@
 using Catalog.PersistenceDB;
 using Catalog.Service.Queries;
+using Catalos.Service.Commons;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,11 +39,16 @@ namespace Catalog.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            if (env.IsDevelopment())
+            if (!env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else {
+                loggerFactory.AddSyslog(
+                    Configuration.GetValue<string>("PaperTrail:host"),
+                    Configuration.GetValue<int>("PaperTrail:port"));
             }
 
             app.UseRouting();
