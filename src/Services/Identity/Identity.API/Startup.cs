@@ -3,16 +3,12 @@ using Identity.Persistence.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
+using MediatR;
 
 namespace Identity.API
 {
@@ -47,6 +43,8 @@ namespace Identity.API
                 options.Password.RequiredLength = 8;
                 options.Password.RequiredUniqueChars = 1;
             });
+
+            services.AddMediatR(Assembly.Load("Identity.Service.EventHandler"));
 
         }
 
