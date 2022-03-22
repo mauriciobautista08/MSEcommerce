@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="3.1.22" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\src\Services\Catalog\Catalog.Services.EventHandlers\Catalog.Services.EventHandlers.csproj" />
+	</ItemGroup>
+</Project>

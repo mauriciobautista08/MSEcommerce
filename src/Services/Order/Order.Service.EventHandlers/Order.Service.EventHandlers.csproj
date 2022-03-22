@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="8.0.0" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\Order.Service.Proxies\Order.Service.Proxies.csproj" />
+	  <ProjectReference Include="..\..\Catalog\Catalog.Services.EventHandlers\Catalog.Services.EventHandlers.csproj" />
+	  <ProjectReference Include="..\Order.Persistence.Database\Order.Persistence.Database.csproj" />
+	</ItemGroup>
+</Project>

@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
 using MediatR;
+using Microsoft.OpenApi.Models;
 
 namespace Identity.API
 {
@@ -45,7 +46,29 @@ namespace Identity.API
             });
 
             services.AddMediatR(Assembly.Load("Identity.Service.EventHandler"));
+            services.AddSwaggerGen();
+            AddSwagger(services);
 
+        }
+
+        private void AddSwagger(IServiceCollection services)
+        {
+            services.AddSwaggerGen(options =>
+            {
+                var groupName = "V1";
+
+                options.SwaggerDoc(groupName, new OpenApiInfo
+                {
+                    Title = $"Identity JWT Ecommerce {groupName}",
+                    Version = groupName,
+                    Description = "Microservicio de Authentificatión y creación de Usuarios",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Mauricio Bautista",
+                        Email = string.Empty
+                    }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +77,15 @@ namespace Identity.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/V1/swagger.json", "Identity MS V1");
+            });
             }
+
+            
 
             app.UseRouting();
 
@@ -64,6 +95,7 @@ namespace Identity.API
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
